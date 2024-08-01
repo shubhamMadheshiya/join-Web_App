@@ -1,14 +1,16 @@
 const mongoose = require("mongoose");
 const keys = require("./keys");
 
-
 const connectDB = async () => {
   try {
-    await mongoose.connect(keys.database.url);
+    await mongoose.connect(keys.database.url, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     console.log("Connected to MongoDB successfully");
   } catch (err) {
-    console.error("Failed to connect to MongoDB:", err);
+    console.log("Failed to connect to MongoDB:");
     process.exit(1);
   }
 };

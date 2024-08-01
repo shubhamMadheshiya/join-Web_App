@@ -1,5 +1,5 @@
 const keys = require('./keys');
 
-const allowedOrigins = [keys.app.adminURL , keys.app.clientURL];
+const allowedOrigins = [keys.app.clientURL];
 
 module.exports = allowedOrigins;
