@@ -81,8 +81,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
         };
         setNewMessage("");
-
-        console.log(config, newMessage, selectedChat);
         const { data } = await axios.post(
           `${process.env.REACT_APP_API_URL}/api/message`,
           {
@@ -145,7 +143,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     if (!socketConnected) return;
 
     if (!typing) {
-      setTyping(true);
+      // setTyping(true);
       socket.emit("typing", selectedChat._id);
     }
     let lastTypingTime = new Date().getTime();
@@ -232,10 +230,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               {istyping ? (
                 <div>
                   <Lottie
-                    options={defaultOptions}
-                    // height={50}
-                    width={70}
-                    style={{ marginBottom: 15, marginLeft: 0 }}
+                    {...defaultOptions}
+                  
+                    style={{ marginBottom: 15, marginLeft: 0, height:60 , width:80 }}
                   />
                 </div>
               ) : (
