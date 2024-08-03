@@ -2,8 +2,8 @@ import { Avatar } from "@chakra-ui/avatar";
 import { Box, Text } from "@chakra-ui/layout";
 import { useChat } from "../../Context/ChatProvider";
 
-const UserListItem = ({ handleFunction }) => {
-  const { user } = useChat();
+const UserListItem = ({ handleFunction,user }) => {
+  // const { user } = useChat();
 
   return (
     <Box
