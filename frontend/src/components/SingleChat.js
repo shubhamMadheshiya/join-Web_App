@@ -81,6 +81,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
         };
         setNewMessage("");
+
+        console.log(config, newMessage, selectedChat);
         const { data } = await axios.post(
           `${process.env.REACT_APP_API_URL}/api/message`,
           {
